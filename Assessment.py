@@ -32,12 +32,12 @@ time.sleep(3)
 successMessage = driver.find_element(By.XPATH, '//*[@id="flash"]').text
 print(successMessage)
 assert "You logged into a secure area!" in successMessage
+# minimize window
+driver.minimize_window()
+time.sleep(1)
 
 print("END OF TASK 1 TEST")
 print("******************************************************************************************************")
-
-driver.minimize_window()
-time.sleep(1)
 
 # Task 2:
 
@@ -45,7 +45,7 @@ time.sleep(1)
 driver.get("https://the-internet.herokuapp.com")
 driver.maximize_window()
 # Click "Form Authentication"
-time.sleep(2) 
+time.sleep(2)
 driver.find_element(By.CSS_SELECTOR, 'a[href="/login"]').click()
 # Enter username "thomas"
 time.sleep(2)
@@ -64,4 +64,5 @@ assert "Your username is invalid!" in errorMessage
 
 print("END OF TASK 2 TEST")
 print("******************************************************************************************************")
+# End of task
 driver.quit()
